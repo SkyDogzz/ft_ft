@@ -11,13 +11,27 @@ OBJ_DIR = obj
 INC_DIR = include
 LOG_DIR = log
 
+SRC_CHAR_DIR = char
+SRC_CHAR = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_islower.c \
+		   ft_isprint.c ft_isspace.c ft_isupper.c ft_tolower.c ft_toupper.c
+
+SRC_CONVERT_DIR = convert
+SRC_CONVERT = ft_atoi.c ft_itoa.c
+
 SRC_FD_DIR = fd
-SRC_FD = ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c
+SRC_FD = ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c
+
+SRC_MEMORY_DIR = memory
+SRC_MEMORY = ft_bzero.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
+			 ft_memset.c
 
 SRC_STR_DIR = str
-SRC_STR = ft_strlen.c
+SRC_STR = ft_strchr.c ft_strdup.c ft_strlen.c ft_strncmp.c ft_strrchr.c
 
 SRC_LIBFT = $(addprefix $(SRC_STR_DIR)/, $(SRC_STR)) \
+			$(addprefix $(SRC_MEMORY_DIR)/, $(SRC_MEMORY)) \
+			$(addprefix $(SRC_CONVERT_DIR)/, $(SRC_CONVERT)) \
+			$(addprefix $(SRC_CHAR_DIR)/, $(SRC_CHAR)) \
 			$(addprefix $(SRC_FD_DIR)/, $(SRC_FD))
 
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(SRC_LIBFT:.c=.o))
