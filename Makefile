@@ -22,8 +22,8 @@ SRC_FD_DIR = fd
 SRC_FD = ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c
 
 SRC_LST_DIR = lst
-SRC_LST = ft_lstadd_back.c ft_lstadd_front.c ft_lstlast.c ft_lstnew.c \
-		  ft_lstsize.c
+SRC_LST = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
+		  ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 
 SRC_MEMORY_DIR = memory
 SRC_MEMORY = ft_bzero.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
