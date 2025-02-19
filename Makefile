@@ -28,11 +28,16 @@ SRC_MEMORY = ft_bzero.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
 SRC_STR_DIR = str
 SRC_STR = ft_strchr.c ft_strdup.c ft_strlen.c ft_strncmp.c ft_strrchr.c
 
+SRC_UTILS_DIR = utils
+SRC_UTILS = ft_abs.c ft_factorial.c ft_max.c ft_min.c ft_power.c ft_sqrt.c \
+			ft_swap.c
+
 SRC_LIBFT = $(addprefix $(SRC_STR_DIR)/, $(SRC_STR)) \
 			$(addprefix $(SRC_MEMORY_DIR)/, $(SRC_MEMORY)) \
 			$(addprefix $(SRC_CONVERT_DIR)/, $(SRC_CONVERT)) \
 			$(addprefix $(SRC_CHAR_DIR)/, $(SRC_CHAR)) \
-			$(addprefix $(SRC_FD_DIR)/, $(SRC_FD))
+			$(addprefix $(SRC_FD_DIR)/, $(SRC_FD)) \
+			$(addprefix $(SRC_UTILS_DIR)/, $(SRC_UTILS))
 
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(SRC_LIBFT:.c=.o))
 DEP_FILES = $(OBJ_FILES:.o=.d)

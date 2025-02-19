@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 02:32:43 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/02/19 18:52:59 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/19 19:01:52 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,13 +102,13 @@ typedef struct s_list
 
 // utils related
 
-// int			ft_abs(int n);
-// int			ft_max(int a, int b);
-// int			ft_min(int a, int b);
-// void		ft_swap(int *a, int *b);
-// int			ft_power(int n, int exp);
-// int			ft_factorial(int n);
-// int			ft_sqrt(int n);
+int			ft_abs(int n);
+int			ft_max(int a, int b);
+int			ft_min(int a, int b);
+void		ft_swap(int *a, int *b);
+int			ft_power(int n, int exp);
+int			ft_factorial(int n);
+int			ft_sqrt(int n);
 
 // dlist related
 
