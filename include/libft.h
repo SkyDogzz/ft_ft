@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 02:32:43 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/02/19 03:28:49 by skydogzz         ###   ########.fr       */
+/*   Updated: 2025/02/19 03:55:06 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,19 @@ void		ft_putendl_fd(char *s, int fd);
 // convert related functions
 
 // int			ft_atoi(const char *str);
+// int     	ft_atoi_base(const char *str, const char *base);
 // char		*ft_itoa(int n);
+// char		*ft_itoa_base(int n, const char *base);
 // long		ft_atol(const char *str);
+// long    	ft_atol_base(const char *str, const char *base);
 // char		*ft_ltoa(long n);
+// char    	*ft_ltoa_base(long n, const char *base);
 // long long	ft_atoll(const char *str);
+// long long   ft_atoll_base(const char *str, const char *base);
 // char		*ft_lltoa(long n);
+// char    	*ft_lltoa_base(long long n, const char *base);
 
-// lst related
+// list related
 
 typedef struct s_list
 {
@@ -99,5 +105,43 @@ typedef struct s_list
 // int			ft_power(int n, int exp);
 // int			ft_factorial(int n);
 // int			ft_sqrt(int n);
+
+// dlist related
+
+typedef struct s_dlist
+{
+	void			*content;
+	struct s_dlist	*prev;
+	struct s_dlist	*next;
+}					t_dlist;
+
+// t_dlist		*ft_dlstnew(void *content);
+// void      	ft_dlstadd_front(t_dlist **alst, t_dlist *ne);
+// void      	ft_dlstadd_back(t_dlist **alst, t_dlist *ne);
+// int       	ft_dlstsize(t_dlist *lst);
+// t_dlist   	*ft_dlstlast(t_dlist *lst);
+// void      	ft_dlstiter(t_dlist *lst, void (*f)(void *));
+// t_dlist   	*ft_dlstmap(t_dlist *lst, void *(*f)(void *), void (*del)(void *));
+// void      	ft_dlstdelone(t_dlist *lst, void (*del)(void *));
+// void      	ft_dlstclear(t_dlist **lst, void (*del)(void *));
+
+// binary tree related
+
+typedef struct s_btree
+{
+	void			*content;
+	struct s_btree	*left;
+	struct s_btree	*right;
+}					t_btree;
+
+// t_btree		*ft_btreenew(void *content);
+// void     	ft_btree_insert(t_btree **root, t_btree *ne,
+// 		int (*cmp)(void *, void *));
+// void     	ft_btree_inorder(t_btree *root, void (*f)(void *));
+// void     	ft_btree_preorder(t_btree *root, void (*f)(void *));
+// void     	ft_btree_postorder(t_btree *root, void (*f)(void *));
+// int      	ft_btree_size(t_btree *root);
+// int      	ft_btree_height(t_btree *root);
+// void     	ft_btree_clear(t_btree **root, void (*del)(void *));
 
 #endif
