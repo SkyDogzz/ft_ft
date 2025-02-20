@@ -30,8 +30,10 @@ SRC_MEMORY = ft_bzero.c ft_calloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c \
 			 ft_memcpy.c ft_memmove.c ft_memset.c
 
 SRC_STR_DIR = str
-SRC_STR = ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c \
-		  ft_strncmp.c ft_strnstr.c ft_strrchr.c
+SRC_STR = ft_freetab.c ft_isin_charset.c ft_isin_stringset.c ft_split.c \
+		  ft_strchr.c ft_strcmp.c ft_strdup.c ft_strjoin.c ft_strlcat.c \
+		  ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strndup.c \
+		  ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c
 
 SRC_UTILS_DIR = utils
 SRC_UTILS = ft_abs.c ft_factorial.c ft_max.c ft_min.c ft_power.c ft_sqrt.c \
