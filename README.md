@@ -37,8 +37,11 @@ make re
 ### Fonctions de manipulation de chaînes de caractères
 - `ft_strlen`   : Calcule la longueur d'une chaîne de caractères.
 - `ft_strdup`   : Duplique une chaîne de caractères.
+- `ft_strlcat`  : Concatene 2 chaîne de caractères, au plus size - 1 bit copié.
+- `ft_strlcpy`  : Copie une chaîne de caractères, au plus size - 1 bit copié.
 - `ft_strchr`   : Recherche un caractère dans une chaîne.
 - `ft_strrchr`  : Recherche un caractère dans une chaîne en partant de la fin.
+- `ft_stnstr`   : Recherche un chaîne dans une autre chaîne.
 - `ft_strncmp`  : Compare deux chaînes sur un nombre limité de caractères.
 
 ### Fonctions de conversion
