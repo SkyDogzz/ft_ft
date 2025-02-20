@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 20:29:09 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/19 20:29:10 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:05:12 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,41 @@
 
 static int	ft_memoverlap(void *p1, void *p2, size_t n)
 {
-	if (p1 < p2 && p1 + sizeof(char) * n > p2)
+	unsigned long long	p1c;
+	unsigned long long	p2c;
+
+	p1c = (unsigned long long)p1;
+	p2c = (unsigned long long)p2;
+	if (p1c < p2c && p1c + sizeof(char) * n > p2c)
 		return (1);
-	else if (p2 < p1 && p2 + sizeof(char) * n > p1)
+	else if (p2c < p1c && p2c + sizeof(char) * n > p1c)
 		return (-1);
 	return (0);
 }
 
-static void	*ft_memcpyrev(void *dest, const void *src, size_t n)
+static void	*ft_memcpyrev(void *dst, const void *src, size_t n)
 {
-	unsigned char	*destuc;
-	unsigned char	*srcuc;
+	const unsigned char	*srcuc;
+	unsigned char		*dstuc;
 
-	destuc = (unsigned char *) dest;
+	dstuc = (unsigned char *) dst;
 	srcuc = (unsigned char *) src;
 	while (n > 0)
 	{
-		destuc[n - 1] = srcuc[n - 1];
+		dstuc[n - 1] = srcuc[n - 1];
 		n--;
 	}
-	return (dest);
+	return (dst);
 }
 
-void	*ft_memmove(void *dest, const void *src, size_t	n)
+void	*ft_memmove(void *dst, const void *src, size_t	n)
 {
 	int	over;
 
-	over = ft_memoverlap(dest, (void *) src, n);
+	over = ft_memoverlap(dst, (void *) src, n);
 	if (over == 0 || over == 1)
-		ft_memcpy(dest, src, n);
+		ft_memcpy(dst, src, n);
 	else
-		ft_memcpyrev(dest, src, n);
-	return (dest);
+		ft_memcpyrev(dst, src, n);
+	return (dst);
 }

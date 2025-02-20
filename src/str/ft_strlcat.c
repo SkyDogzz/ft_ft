@@ -6,32 +6,32 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:16:17 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/20 13:16:18 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:09:37 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-size_t	ft_strlcat(char *d, const char *s, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	d_len;
-	size_t	s_len;
+	size_t	dst_len;
+	size_t	src_len;
 	size_t	i;
 
-	d_len = 0;
-	while (d[d_len] && d_len < n)
-		d_len++;
-	s_len = 0;
-	while (s[s_len])
-		s_len++;
-	if (n <= d_len)
-		return (n + s_len);
+	dst_len = 0;
+	while (dst_len < dstsize && dst[dst_len])
+		dst_len++;
+	src_len = 0;
+	while (src[src_len])
+		src_len++;
+	if (dstsize <= dst_len)
+		return (dstsize + src_len);
 	i = 0;
-	while (s[i] && (d_len + i) < (n - 1))
+	while (src[i] && (dst_len + i) < (dstsize - 1))
 	{
-		d[d_len + i] = s[i];
+		dst[dst_len + i] = src[i];
 		i++;
 	}
-	d[d_len + i] = '\0';
-	return (d_len + s_len);
+	dst[dst_len + i] = '\0';
+	return (dst_len + src_len);
 }

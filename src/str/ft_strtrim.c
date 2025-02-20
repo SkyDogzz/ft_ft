@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:38:17 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/20 14:57:13 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:14:17 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strtrim(const char *s, const char *set)
 	size_t	pre;
 	size_t	post;
 	size_t	pos;
-	size_t	len;
+	int		len;
 
 	pre = ft_pre_trim_size(s, set);
 	post = ft_post_trim_size(s, set);
@@ -57,7 +57,7 @@ char	*ft_strtrim(const char *s, const char *set)
 	if (!trim)
 		return (NULL);
 	pos = 0;
-	while (pos < len)
+	while (pos < (size_t) len)
 	{
 		trim[pos] = s[pos + pre];
 		pos++;
