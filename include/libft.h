@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 02:32:43 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/02/20 15:01:10 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:02:44 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ typedef struct s_list
 t_list		*ft_lstnew(void *content);
 t_list		*ft_lstadd_front(t_list **lst, t_list *ne);
 int			ft_lstsize(t_list *lst);
+int			ft_lstsize_full(t_list *lst);
+t_list		*ft_lstfirst(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);
 t_list		*ft_lstadd_back(t_list **lst, t_list *ne);
 void		ft_lstdelone(t_list *lst, void (*del)(void *));
@@ -128,15 +130,17 @@ typedef struct s_dlist
 	struct s_dlist	*next;
 }					t_dlist;
 
-// t_dlist		*ft_dlstnew(void *content);
-// void      	ft_dlstadd_front(t_dlist **alst, t_dlist *ne);
-// void      	ft_dlstadd_back(t_dlist **alst, t_dlist *ne);
-// int       	ft_dlstsize(t_dlist *lst);
-// t_dlist   	*ft_dlstlast(t_dlist *lst);
-// void      	ft_dlstiter(t_dlist *lst, void (*f)(void *));
-// t_dlist   	*ft_dlstmap(t_dlist *lst, void *(*f)(void *), void (*del)(void *));
-// void      	ft_dlstdelone(t_dlist *lst, void (*del)(void *));
-// void      	ft_dlstclear(t_dlist **lst, void (*del)(void *));
+t_dlist		*ft_dlstnew(void *content);
+void		ft_dlstadd_front(t_dlist **dlst, t_dlist *ne);
+void		ft_dlstadd_back(t_dlist **dlst, t_dlist *ne);
+int			ft_dlstsize(t_dlist *dlst);
+int			ft_dlstsize_full(t_dlist *dlst);
+t_dlist		*ft_dlstfirst(t_dlist *dlst);
+t_dlist		*ft_dlstlast(t_dlist *dlst);
+void		ft_dlstiter(t_dlist *dlst, void (*f)(void *));
+t_dlist		*ft_dlstmap(t_dlist *dlst, void *(*f)(void *), void (*del)(void *));
+void		ft_dlstdelone(t_dlist *dlst, void (*del)(void *));
+void		ft_dlstclear(t_dlist **dlst, void (*del)(void *));
 
 // binary tree related
 

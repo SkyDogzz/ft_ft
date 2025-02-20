@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_dlstlast.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/19 19:32:25 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/20 15:54:57 by tstephan         ###   ########.fr       */
+/*   Created: 2025/02/20 15:55:03 by tstephan          #+#    #+#             */
+/*   Updated: 2025/02/20 15:55:27 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_dlist	*ft_dlstlast(t_dlist *dlst)
 {
-	if (!lst)
+	if (!dlst)
 		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	while (dlst->next)
+		dlst = dlst->next;
+	return (dlst);
 }

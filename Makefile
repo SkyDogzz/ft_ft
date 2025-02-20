@@ -1,6 +1,10 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -std=c99 -MMD
 
+ifdef DEBUG
+	CFLAGS += -g3
+endif
+
 _END    = $(shell printf "\033[0m")
 _BOLD   = $(shell printf "\033[1m")
 _CYAN   = $(shell printf "\033[36m")
@@ -17,6 +21,11 @@ SRC_CHAR = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_islower.c \
 
 SRC_CONVERT_DIR = convert
 SRC_CONVERT = ft_atoi.c ft_itoa.c
+
+SRC_DLST_DIR = dlst
+SRC_DLST = ft_dlstadd_back.c ft_dlstadd_front.c ft_dlstclear.c ft_dlstdelone.c \
+		   ft_dlstfirst.c ft_dlstiter.c ft_dlstlast.c ft_dlstmap.c \
+		   ft_dlstnew.c ft_dlstsize.c ft_dlstsize_full.c
 
 SRC_FD_DIR = fd
 SRC_FD = ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c
@@ -45,7 +54,8 @@ SRC_LIBFT = $(addprefix $(SRC_STR_DIR)/, $(SRC_STR)) \
 			$(addprefix $(SRC_CHAR_DIR)/, $(SRC_CHAR)) \
 			$(addprefix $(SRC_FD_DIR)/, $(SRC_FD)) \
 			$(addprefix $(SRC_UTILS_DIR)/, $(SRC_UTILS)) \
-			$(addprefix $(SRC_LST_DIR)/, $(SRC_LST))
+			$(addprefix $(SRC_LST_DIR)/, $(SRC_LST)) \
+			$(addprefix $(SRC_DLST_DIR)/, $(SRC_DLST))
 
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(SRC_LIBFT:.c=.o))
 DEP_FILES = $(OBJ_FILES:.o=.d)
