@@ -22,6 +22,10 @@ NAME = test_char
 all: libft $(NAME)
 	@echo "$(_CYAN)[BUILD COMPLET]$(_END) $(NAME) est prêt !"
 
+run: all
+	@echo "$(_CYAN)[TESTING $(NAME)]$(_END)"
+	@./$(NAME)
+
 libft: $(LIBFT_DIR)/libft.a
 
 $(LIBFT_DIR)/libft.a:

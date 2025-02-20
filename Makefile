@@ -76,6 +76,10 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 -include $(DEP_FILES)
 
+tests:
+	@echo yay
+	@make run -C tests/char
+
 clean:
 	@rm -rf $(LOG_DIR)
 	@rm -rf $(OBJ_DIR)
@@ -107,4 +111,4 @@ lint:
 	--suppress=checkersReport 2> $(LOG_DIR)/lint_errors.log
 	@echo "$(_CYAN)Résultats de cppcheck enregistrés dans $(LOG_DIR)/lint_errors.log$(_END)"
 
-.PHONY: all clean fclean re ascii lint
+.PHONY: all clean fclean re ascii lint tests
