@@ -6,13 +6,13 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:26:55 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/21 18:13:58 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/21 20:34:23 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/char.h"
 
-void	compare_is_something(int lower, int upper, int (*libc)(int c),
+static void	compare_is_something(int lower, int upper, int (*libc)(int c),
 			int (*libft)(int c))
 {
 	int	error;
@@ -31,22 +31,45 @@ void	compare_is_something(int lower, int upper, int (*libc)(int c),
 		printf(GRN "Works well\n" CRESET);
 }
 
+static void	compare_to_something(int lower, int upper, int (*libc)(int c),
+			int (*libft)(int c))
+{
+	int	error;
+
+	error = 0;
+	while (lower < upper)
+	{
+		if ((libc(lower)) != (libft(lower)))
+		{
+			printf(RED "Problem for test %d\n" CRESET, lower);
+			error = 1;
+		}
+		lower++;
+	}
+	if (!error)
+		printf(GRN "Works well\n" CRESET);
+}
+
 int	main(void)
 {
-	printf("Testing function ft_isalnum\n");
+	printf(BLU "Testing function ft_isalnum\n" CRESET);
 	compare_is_something(-128, 256, isalnum, ft_isalnum);
-	printf("Testing function ft_isalpha\n");
+	printf(BLU "Testing function ft_isalpha\n" CRESET);
 	compare_is_something(-128, 256, isalpha, ft_isalpha);
-	printf("Testing function ft_isascii\n");
+	printf(BLU "Testing function ft_isascii\n" CRESET);
 	compare_is_something(-128, 256, isascii, ft_isascii);
-	printf("Testing function ft_isdigit\n");
+	printf(BLU "Testing function ft_isdigit\n" CRESET);
 	compare_is_something(-128, 256, isdigit, ft_isdigit);
-	printf("Testing function ft_islower\n");
+	printf(BLU "Testing function ft_islower\n" CRESET);
 	compare_is_something(-128, 256, islower, ft_islower);
-	printf("Testing function ft_isprint\n");
+	printf(BLU "Testing function ft_isprint\n" CRESET);
 	compare_is_something(-128, 256, isprint, ft_isprint);
-	printf("Testing function ft_isspace\n");
+	printf(BLU "Testing function ft_isspace\n" CRESET);
 	compare_is_something(-128, 256, isspace, ft_isspace);
-	printf("Testing function ft_isupper\n");
+	printf(BLU "Testing function ft_isupper\n" CRESET);
 	compare_is_something(-128, 256, isupper, ft_isupper);
+	printf(BLU "Testing function ft_tolower\n" CRESET);
+	compare_to_something(0, 256, tolower, ft_tolower);
+	printf(BLU "Testing function ft_toupper\n" CRESET);
+	compare_to_something(0, 256, toupper, ft_toupper);
 }

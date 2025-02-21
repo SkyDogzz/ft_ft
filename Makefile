@@ -5,6 +5,10 @@ ifdef DEBUG
 	CFLAGS += -g3
 endif
 
+ifndef VERBOSE
+MAKEFLAGS += --no-print-directory
+endif
+
 _END    = $(shell printf "\033[0m")
 _BOLD   = $(shell printf "\033[1m")
 _CYAN   = $(shell printf "\033[36m")
