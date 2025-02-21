@@ -48,6 +48,11 @@ SRC_UTILS_DIR = utils
 SRC_UTILS = ft_abs.c ft_factorial.c ft_max.c ft_min.c ft_power.c ft_sqrt.c \
 			ft_swap.c
 
+SRC_BTREE_DIR = btree
+SRC_BTREE = ft_btree_clear.c ft_btree_height.c ft_btree_inorder.c \
+			ft_btree_insert.c ft_btree_new.c ft_btree_postorder.c \
+			ft_btree_preorder.c ft_btree_size.c
+
 SRC_LIBFT = $(addprefix $(SRC_STR_DIR)/, $(SRC_STR)) \
 			$(addprefix $(SRC_MEMORY_DIR)/, $(SRC_MEMORY)) \
 			$(addprefix $(SRC_CONVERT_DIR)/, $(SRC_CONVERT)) \
@@ -55,6 +60,7 @@ SRC_LIBFT = $(addprefix $(SRC_STR_DIR)/, $(SRC_STR)) \
 			$(addprefix $(SRC_FD_DIR)/, $(SRC_FD)) \
 			$(addprefix $(SRC_UTILS_DIR)/, $(SRC_UTILS)) \
 			$(addprefix $(SRC_LST_DIR)/, $(SRC_LST)) \
+			$(addprefix $(SRC_BTREE_DIR)/, $(SRC_BTREE)) \
 			$(addprefix $(SRC_DLST_DIR)/, $(SRC_DLST))
 
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(SRC_LIBFT:.c=.o))
@@ -76,9 +82,9 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 -include $(DEP_FILES)
 
-tests:
-	@echo yay
+tests: all
 	@make run -C tests/char
+	@make run -C tests/btree
 
 clean:
 	@rm -rf $(LOG_DIR)
