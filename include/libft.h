@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 02:32:43 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/02/21 01:26:06 by skydogzz         ###   ########.fr       */
+/*   Updated: 2025/02/21 18:08:27 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,14 +152,14 @@ typedef struct s_btree
 	struct s_btree	*right;
 }					t_btree;
 
-// t_btree		*ft_btreenew(void *content);
-// void     	ft_btree_insert(t_btree **root, t_btree *ne,
-// 		int (*cmp)(void *, void *));
-// void     	ft_btree_inorder(t_btree *root, void (*f)(void *));
-// void     	ft_btree_preorder(t_btree *root, void (*f)(void *));
-// void     	ft_btree_postorder(t_btree *root, void (*f)(void *));
-// int      	ft_btree_size(t_btree *root);
-// int      	ft_btree_height(t_btree *root);
-// void     	ft_btree_clear(t_btree **root, void (*del)(void *));
+t_btree		*ft_btree_new(void *content);
+void		ft_btree_insert(t_btree **root, t_btree *ne,
+				int (*cmp)(void *, void *));
+void		ft_btree_inorder(t_btree *root, void (*f)(void *));
+void		ft_btree_preorder(t_btree *root, void (*f)(void *));
+void		ft_btree_postorder(t_btree *root, void (*f)(void *));
+int			ft_btree_size(t_btree *root);
+int			ft_btree_height(t_btree *root);
+void		ft_btree_clear(t_btree **root, void (*del)(void *));
 
 #endif
