@@ -1,6 +1,7 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR) -I$(LIBFT_DIR)/include
-LDFLAGS = -L$(LIBFT_DIR)
+# CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR) -I$(LIBFT_DIR)/include
+CFLAGS = -Wall -Wextra -Werror
+LDFLAGS = $(LIBFT_DIR)/libft.a
 
 _END    = $(shell printf "\033[0m")
 _BOLD   = $(shell printf "\033[1m")
@@ -10,7 +11,7 @@ _BLUE   = $(shell printf "\033[34m")
 SRC_DIR = src
 OBJ_DIR = obj
 INC_DIR = include
-LIBFT_DIR = ../../
+LIBFT_DIR = ../..
 
 SRC_FILES = main.c
 
@@ -22,7 +23,7 @@ NAME = test_char
 all: libft $(NAME)
 	@echo "$(_CYAN)[BUILD COMPLET]$(_END) $(NAME) est prêt !"
 
-run: all
+run: re
 	@echo "$(_CYAN)[TESTING $(NAME)]$(_END)"
 	@./$(NAME)
 
@@ -32,7 +33,7 @@ $(LIBFT_DIR)/libft.a:
 	@make -C $(LIBFT_DIR)
 
 $(NAME): $(OBJ_FILES)
-	@$(CC) $(CFLAGS) $^ $(LDFLAGS) -o $@
+	@$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS) 
 	@echo "$(_CYAN)[LINKING]$(_END) $(NAME) est créé !"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_FILES)
@@ -49,7 +50,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(_BLUE)[FCLEAN]$(_END) Suppression de $(NAME) et de la copie de libft."
+	@echo "$(_BLUE)[FCLEAN]$(_END) Suppression de $(NAME)"
 
 re: fclean all
 

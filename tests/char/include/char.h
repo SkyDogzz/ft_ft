@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:26:58 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/20 16:26:59 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/21 00:46:12 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define CHAR_H
 
 # include "../../../include/libft.h"
+# include <ctype.h>
 
 #endif
