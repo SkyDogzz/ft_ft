@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:28:32 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/21 19:41:17 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/21 20:17:31 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	free_data(void *content)
 
 void	print_data(void *content)
 {
-	int	*data;
+	const int	*data;
 
 	data = (int *)content;
 	printf("%d ", *data);
@@ -27,8 +27,8 @@ void	print_data(void *content)
 
 int	cmp(void *leaf, void *new)
 {
-	int	*i_leaf;
-	int	*i_new;
+	const int	*i_leaf;
+	const int	*i_new;
 
 	i_leaf = (int *)leaf;
 	i_new = (int *)new;

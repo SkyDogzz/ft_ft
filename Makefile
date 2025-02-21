@@ -113,7 +113,7 @@ ascii:
 
 lint:
 	@mkdir -p $(LOG_DIR)
-	@cppcheck --enable=all --inconclusive --std=c99 -I $(INC_DIR) $(SRC_DIR) \
+	@cppcheck --enable=all --inconclusive --std=c99 -I $(INC_DIR) $(SRC_DIR) tests \
 	--suppress=unusedFunction --suppress=unusedVariable \
 	--suppress=variableScope --suppress=missingIncludeSystem \
 	--check-level=exhaustive --suppress=unmatchedSuppression \
