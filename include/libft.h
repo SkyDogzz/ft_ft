@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 02:32:43 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/02/21 18:08:27 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/21 20:06:21 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strdup(const char *s);
 char		*ft_strndup(const char *s, int n);
+// still have a weird bug with ft_strreplace
+char		*ft_strreplace(const char *full, const char *old, const char *ne);
 
 void		ft_freetab(char **tab);
 t_bool		ft_isin_charset(const char c, const char *set);

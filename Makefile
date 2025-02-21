@@ -40,9 +40,9 @@ SRC_MEMORY = ft_bzero.c ft_calloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c \
 
 SRC_STR_DIR = str
 SRC_STR = ft_freetab.c ft_isin_charset.c ft_isin_stringset.c ft_split.c \
-		  ft_strchr.c ft_strcmp.c ft_strdup.c ft_strjoin.c ft_strlcat.c \
-		  ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strndup.c \
-		  ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c
+		  ft_strreplace.c ft_strchr.c ft_strcmp.c ft_strdup.c ft_strjoin.c \
+		  ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c \
+		  ft_strndup.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c
 
 SRC_UTILS_DIR = utils
 SRC_UTILS = ft_abs.c ft_factorial.c ft_max.c ft_min.c ft_power.c ft_sqrt.c \
@@ -87,11 +87,15 @@ tests: all
 	@make run -C tests/btree
 
 clean:
+	@make clean -C tests/char
+	@make clean -C tests/btree
 	@rm -rf $(LOG_DIR)
 	@rm -rf $(OBJ_DIR)
 	@echo "$(_BLUE)[CLEAN]$(_END) Suppression des fichiers objets."
 
 fclean: clean
+	@make fclean -C tests/char
+	@make fclean -C tests/btree
 	@rm -f $(NAME)
 	@echo "$(_BLUE)[FCLEAN]$(_END) Suppression de l'archive $(NAME)."
 

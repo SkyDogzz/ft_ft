@@ -22,7 +22,7 @@ NAME = test_btree
 all: libft $(NAME)
 	@echo "$(_CYAN)[BUILD COMPLET]$(_END) $(NAME) est prêt !"
 
-run: re
+run: all
 	@echo "$(_CYAN)[TESTING $(NAME)]$(_END)"
 	@./$(NAME)
 
@@ -42,9 +42,6 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_FILES)
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@if [ -d "$(LIBFT_DIR)" ]; then \
-		make -C $(LIBFT_DIR) clean; \
-	fi
 	@echo "$(_BLUE)[CLEAN]$(_END) Suppression des fichiers objets."
 
 fclean: clean
