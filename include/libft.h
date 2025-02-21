@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 02:32:43 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/02/20 16:02:44 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/21 01:26:06 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
+# include "color.h"
 
 typedef enum e_bool
 {
