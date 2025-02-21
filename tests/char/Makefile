@@ -1,5 +1,4 @@
 CC = cc
-# CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR) -I$(LIBFT_DIR)/include
 CFLAGS = -Wall -Wextra -Werror
 LDFLAGS = $(LIBFT_DIR)/libft.a
 
