@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 02:32:43 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/02/22 19:46:33 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:27:01 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,9 +179,11 @@ typedef struct s_hashnode
 
 typedef struct s_hashmap
 {
-	t_hashnode	buckets[MAX_BUCKETS];
+	t_hashnode	*buckets;
+	size_t		size;
 }			t_hashmap;
 
+t_hashmap	*ft_hashmap_new(void);
 /*hashmap_new      # allocate a new hash map*/
 /*hashmap_free     # free the hash map*/
 /*hashmap_count    # returns the number of items in the hash map*/
