@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 19:43:57 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/22 13:40:02 by skydogzz         ###   ########.fr       */
+/*   Updated: 2025/02/22 19:55:21 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,38 +20,22 @@ char	*ft_strreplace(const char *full, const char *old, const char *ne)
 
 	if (!full || !old || !ne)
 		return (NULL);
+	if (!ft_strnstr(full, old, ft_strlen(full)))
+		return (ft_strdup(full));
 	len = ft_strlen(full) - ft_strlen(old) + ft_strlen(ne);
 	replaced = (char *)malloc(sizeof(char) * (len + 1));
 	if (!replaced)
 		return (NULL);
+	ft_bzero(replaced, len + 1);
 	pos = 0;
 	while (ft_strncmp(full, old, ft_strlen(old)) != 0)
 		replaced[pos++] = *full++;
 	if (!*full)
-	{
-		replaced[pos] = 0;
 		return (replaced);
-	}
 	full += ft_strlen(old);
 	while (*ne)
 		replaced[pos++] = *ne++;
 	while (*full)
 		replaced[pos++] = *full++;
-	replaced[pos] = 0;
 	return (replaced);
 }
-
-/*int main(void)*/
-/*{*/
-/*	char *hello = "hello not world";*/
-/**/
-/*	printf("%s -> %s\n", hello, ft_strreplace(hello, "not", "yes"));*/
-/*	printf("%s -> %s\n", hello, ft_strreplace(hello, "not", "yasss queen"));*/
-/*	printf("%s -> %s\n", hello, ft_strreplace(hello, "not", ""));*/
-/*	printf("%s -> %s\n", hello, ft_strreplace(hello, "not", "yasss queen"));*/
-/*	printf("%s -> %s\n", hello, ft_strreplace(hello, "", "iu"));*/
-/*	printf("%s -> %s\n", hello, ft_strreplace(hello, "not", "yasss queen"));*/
-/*	printf("%s -> %s\n", hello, ft_strreplace(hello, "ioyiyuiy", "iu"));*/
-/*	printf("%s\n", hello);*/
-/*	printf("%s -> %s\n", hello, ft_strreplace(hello, "not", "yasss queen"));*/
-/*}*/

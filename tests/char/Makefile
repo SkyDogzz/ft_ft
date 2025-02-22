@@ -42,7 +42,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_FILES)
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "$(_BLUE)[CLEAN]$(_END) Suppression des fichiers objets."
+	@echo "$(_BLUE)[CLEAN]$(_END) Suppression des fichiers objets de $(NAME)."
 
 fclean: clean
 	@rm -f $(NAME)

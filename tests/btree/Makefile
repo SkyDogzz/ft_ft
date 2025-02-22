@@ -12,7 +12,7 @@ OBJ_DIR = obj
 INC_DIR = include
 LIBFT_DIR = ../..
 
-SRC_FILES = main.c
+SRC_FILES = .main.c
 
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
 INC_FILES = include/btree.h
@@ -42,7 +42,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_FILES)
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "$(_BLUE)[CLEAN]$(_END) Suppression des fichiers objets."
+	@echo "$(_BLUE)[CLEAN]$(_END) Suppression des fichiers objets de $(NAME)."
 
 fclean: clean
 	@rm -f $(NAME)

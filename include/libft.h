@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 02:32:43 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/02/21 20:06:21 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/22 19:46:33 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stddef.h>
+# include <stdint.h>
 # include "color.h"
 
 typedef enum e_bool
@@ -163,5 +165,30 @@ void		ft_btree_postorder(t_btree *root, void (*f)(void *));
 int			ft_btree_size(t_btree *root);
 int			ft_btree_height(t_btree *root);
 void		ft_btree_clear(t_btree **root, void (*del)(void *));
+
+// hashmap related
+
+# define MAX_BUCKETS 32
+
+typedef struct s_hashnode
+{
+	uint64_t				key;
+	void					*content;
+	struct s_hashnode		*next;
+}							t_hashnode;
+
+typedef struct s_hashmap
+{
+	t_hashnode	buckets[MAX_BUCKETS];
+}			t_hashmap;
+
+/*hashmap_new      # allocate a new hash map*/
+/*hashmap_free     # free the hash map*/
+/*hashmap_count    # returns the number of items in the hash map*/
+/*hashmap_set      # insert or replace an 
+ * existing item and return the previous*/
+/*hashmap_get      # get an existing item*/
+/*hashmap_delete   # delete and return an item*/
+/*hashmap_clear    # clear the hash map*/
 
 #endif

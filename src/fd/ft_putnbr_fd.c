@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:53:13 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/19 18:55:08 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/22 19:07:43 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	ft_putnbr_fd(int n, int fd)
 	nbr = ft_itoa(n);
 	if (!nbr)
 		return ;
-	write(fd, nbr, ft_strlen(nbr));
+	ft_putstr_fd(nbr, fd);
 	free(nbr);
 }

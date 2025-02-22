@@ -91,11 +91,9 @@ tests: all
 	@make run -C tests/btree
 
 clean:
-	@make clean -C tests/char
-	@make clean -C tests/btree
 	@rm -rf $(LOG_DIR)
 	@rm -rf $(OBJ_DIR)
-	@echo "$(_BLUE)[CLEAN]$(_END) Suppression des fichiers objets."
+	@echo "$(_BLUE)[CLEAN]$(_END) Suppression des fichiers objets de $(NAME)."
 
 fclean: clean
 	@make fclean -C tests/char
@@ -121,7 +119,7 @@ lint:
 	--suppress=unusedFunction --suppress=unusedVariable \
 	--suppress=variableScope --suppress=missingIncludeSystem \
 	--check-level=exhaustive --suppress=unmatchedSuppression \
-	--suppress=shiftTooManyBitsSigned \
+	--suppress=shiftTooManyBitsSigned --suppress=constVariablePointer \
 	--suppress=checkersReport 2> $(LOG_DIR)/lint_errors.log
 	@echo "$(_CYAN)Résultats de cppcheck enregistrés dans $(LOG_DIR)/lint_errors.log$(_END)"
 
