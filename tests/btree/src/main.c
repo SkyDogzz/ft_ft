@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:28:32 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/21 20:17:31 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/22 13:41:00 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	free_data(void *content)
 {
-	(void) content;
+	(void)content;
 }
 
 void	print_data(void *content)
@@ -25,59 +25,97 @@ void	print_data(void *content)
 	printf("%d ", *data);
 }
 
-int	cmp(void *leaf, void *new)
+int	cmp(void *a, void *b)
 {
-	const int	*i_leaf;
-	const int	*i_new;
+	const int	*ia; 
+	const int	*ib; 
 
-	i_leaf = (int *)leaf;
-	i_new = (int *)new;
-	return (*i_leaf - *i_new);
+	ia = (int *)a;
+	ib = (int *)b;
+	return (*ia - *ib);
 }
 
 int	main(void)
 {
 	t_btree	*root;
-	int		data[7];
+	int		n;
 
 	root = NULL;
-	data[0] = 1;
-	data[1] = 2;
-	data[2] = 3;
-	data[3] = 4;
-	data[4] = 5;
-	data[5] = 6;
-	root = ft_btree_new(&data[0]);
-	root->left = ft_btree_new(&data[1]);
-	root->right = ft_btree_new(&data[2]);
-	root->left->left = ft_btree_new(&data[3]);
-	root->left->right = ft_btree_new(&data[4]);
-	root->right->right = ft_btree_new(&data[5]);
-	printf("Inorder print: expected 4 2 5 1 3 6\n");
+	/* --- Test 1 : Insertion via ft_btree_insert avec un tableau d'entiers plus grand --- */
+	printf("=== Test 1 : Insertion par ft_btree_insert ===\n");
+	int arr1[] = {50, 30, 20, 40, 70, 60, 80, 10, 35, 65, 55, 75};
+	n = sizeof(arr1) / sizeof(arr1[0]);
+
+	// Insertion des éléments dans l'arbre (l'ordre d'insertion n'étant pas trié,
+	// ft_btree_insert doit placer les noeuds correctement selon cmp).
+	for (int i = 0; i < n; i++)
+	{
+		t_btree	*new_node = ft_btree_new(&arr1[i]);
+		ft_btree_insert(&root, new_node, cmp);
+	}
+	printf("Inorder (devrait être trié) : ");
 	ft_btree_inorder(root, print_data);
-	printf("\n");
-	printf("Preorder print: expected 1 2 4 5 3 6\n");
+	printf("\nPreorder : ");
 	ft_btree_preorder(root, print_data);
-	printf("\n");
-	printf("Postorder print: expected 4 5 2 6 3 1\n");
+	printf("\nPostorder : ");
 	ft_btree_postorder(root, print_data);
-	printf("\n");
-	printf("Expected size = 6, got %d\n", ft_btree_size(root));
-	printf("Expected height = 3, got %d\n", ft_btree_height(root));
-	data[6] = 7;
-	root->left->left->right = ft_btree_new(&data[6]);
-	printf("Expected size = 7, got %d\n", ft_btree_size(root));
-	printf("Expected height = 4, got %d\n", ft_btree_height(root));
+	printf("\nTaille de l'arbre : %d\n", ft_btree_size(root));
+	printf("Hauteur de l'arbre : %d\n", ft_btree_height(root));
+
+	// Libération de l'arbre
 	ft_btree_clear(&root, free_data);
-	root = NULL;
-	ft_btree_insert(&root, ft_btree_new(&data[0]), cmp);
-	ft_btree_insert(&root, ft_btree_new(&data[1]), cmp);
-	ft_btree_insert(&root, ft_btree_new(&data[4]), cmp);
-	ft_btree_insert(&root, ft_btree_new(&data[5]), cmp);
-	ft_btree_insert(&root, ft_btree_new(&data[2]), cmp);
-	ft_btree_insert(&root, ft_btree_new(&data[3]), cmp);
-	printf("Inorder print: expected pouet\n");
+
+
+	/* --- Test 2 : Construction manuelle d'un arbre plus complexe --- */
+	printf("\n=== Test 2 : Construction manuelle d'un arbre ===\n");
+	/*
+	// Arbre construit manuellement :
+	//
+	//                25
+	//               /  \
+	//             15    50
+	//            /  \   / \
+	//          10   22 35  70
+	//               /     /  \
+	//             18     60   80
+	//                         /
+	//                       65
+	 */
+	int arr2[] = {25, 15, 50, 10, 22, 35, 70, 18, 60, 80, 65};
+	t_btree	*nodes[11];
+	n = sizeof(arr2) / sizeof(arr2[0]);
+
+	// Création des noeuds
+	for (int i = 0; i < n; i++)
+		nodes[i] = ft_btree_new(&arr2[i]);
+
+	// Lier manuellement les noeuds pour obtenir la structure souhaitée
+	// Racine
+	nodes[0]->left = nodes[1];   // 25 -> gauche = 15
+	nodes[0]->right = nodes[2];  // 25 -> droite = 50
+	// Sous-arbre gauche
+	nodes[1]->left = nodes[3];   // 15 -> gauche = 10
+	nodes[1]->right = nodes[4];  // 15 -> droite = 22
+	nodes[4]->left = nodes[7];   // 22 -> gauche = 18
+	// Sous-arbre droit
+	nodes[2]->left = nodes[5];   // 50 -> gauche = 35
+	nodes[2]->right = nodes[6];  // 50 -> droite = 70
+	nodes[6]->left = nodes[8];   // 70 -> gauche = 60
+	nodes[6]->right = nodes[9];  // 70 -> droite = 80
+	nodes[9]->left = nodes[10];  // 80 -> gauche = 65
+
+	root = nodes[0];  // La racine de l'arbre est le noeud contenant 25
+
+	printf("Inorder (devrait être trié) : ");
 	ft_btree_inorder(root, print_data);
-	printf("\n");
+	printf("\nPreorder : ");
+	ft_btree_preorder(root, print_data);
+	printf("\nPostorder : ");
+	ft_btree_postorder(root, print_data);
+	printf("\nTaille de l'arbre : %d\n", ft_btree_size(root));
+	printf("Hauteur de l'arbre : %d\n", ft_btree_height(root));
+
 	ft_btree_clear(&root, free_data);
+
+	return (0);
 }

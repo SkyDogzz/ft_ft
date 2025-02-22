@@ -6,37 +6,24 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:59:49 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/21 19:41:32 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/22 13:31:06 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-// Not finished
-void	ft_btree_insert(t_btree **root, t_btree *ne, int (*cmp)(void *, void *))
+void	ft_btree_insert(t_btree **root, t_btree *new,
+			int (*cmp)(void *, void *))
 {
-	int		res;
-	t_btree	*leaf;
-
-	leaf = *root;
-	if (!leaf)
+	if (!root || !new)
+		return ;
+	if (!*root)
 	{
-		*root = ne;
+		*root = new;
 		return ;
 	}
-	res = cmp(leaf->content, ne->content);
-	if (res < 0)
-	{
-		if (!leaf->left)
-			leaf->left = ne;
-		else
-			ft_btree_insert(&leaf->left, ne, cmp);
-	}
+	if (cmp(new->content, (*root)->content) < 0)
+		ft_btree_insert(&(*root)->left, new, cmp);
 	else
-	{
-		if (!leaf->right)
-			leaf->right = ne;
-		else
-			ft_btree_insert(&leaf->right, ne, cmp);
-	}
+		ft_btree_insert(&(*root)->right, new, cmp);
 }

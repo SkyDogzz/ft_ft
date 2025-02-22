@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:13:39 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/21 18:45:42 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/22 13:27:34 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ void	ft_btree_clear(t_btree **root, void (*del)(void *))
 		ft_btree_clear(&leaf->right, del);
 	del(leaf->content);
 	free(leaf);
+	*root = NULL;
 }

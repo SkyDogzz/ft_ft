@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 19:43:57 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/21 20:06:59 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/22 13:40:02 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@ char	*ft_strreplace(const char *full, const char *old, const char *ne)
 	if (!full || !old || !ne)
 		return (NULL);
 	len = ft_strlen(full) - ft_strlen(old) + ft_strlen(ne);
-	printf("len ne %d\n", len);
 	replaced = (char *)malloc(sizeof(char) * (len + 1));
 	if (!replaced)
 		return (NULL);
-	printf("len ne %d\n", len);
 	pos = 0;
 	while (ft_strncmp(full, old, ft_strlen(old)) != 0)
 		replaced[pos++] = *full++;
