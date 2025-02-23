@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:38:17 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/20 15:14:17 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/23 13:43:53 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_strtrim(const char *s, const char *set)
 
 	pre = ft_pre_trim_size(s, set);
 	post = ft_post_trim_size(s, set);
-	len = ft_strlen(s) - pre + post;
+	len = ft_strlen(s) - pre - post;
 	if (len < 0)
 		len = 0;
 	trim = (char *)malloc(sizeof(char) * (len + 1));

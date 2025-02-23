@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:49:31 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/19 17:50:41 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/23 13:43:18 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	return (ft_memchr(s, c, ft_strlen(s)));
+	return (ft_memchr(s, c, ft_strlen(s) + 1));
 }
