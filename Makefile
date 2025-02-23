@@ -93,6 +93,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 tests: all
 	@make run -C tests/char
 	@make run -C tests/btree
+	@make run -C tests/convert
 
 clean:
 	@rm -rf $(LOG_DIR)
@@ -102,6 +103,7 @@ clean:
 fclean: clean
 	@make fclean -C tests/char
 	@make fclean -C tests/btree
+	@make fclean -C tests/convert
 	@rm -f $(NAME)
 	@echo "$(_BLUE)[FCLEAN]$(_END) Suppression de l'archive $(NAME)."
 

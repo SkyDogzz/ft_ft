@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:28:32 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/22 15:38:55 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/23 13:49:15 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,17 +68,17 @@ int	main(void)
 
 	/* --- Test 2 : Construction manuelle d'un arbre plus complexe --- */
 	printf("\n=== Test 2 : Construction manuelle d'un arbre ===\n");
-	// Arbre construit manuellement :
-	//
-	//                25
-	//               /  \
-	//             15    50
-	//            /  \   / \
-	//          10   22 35  70
-	//               /     /  \
-	//             18     60   80
-	//                         /
-	//                       65
+	/*// Arbre construit manuellement :*/
+	/*//*/
+	/*//                25*/
+	/*//               /  \*/
+	/*//             15    50*/
+	/*//            /  \   / \*/
+	/*//          10   22 35  70*/
+	/*//               /     /  \*/
+	/*//             18     60   80*/
+	/*//                         /*/
+	/*//                       65*/
 	int arr2[] = {25, 15, 50, 10, 22, 35, 70, 18, 60, 80, 65};
 	t_btree	*nodes[11];
 	n = sizeof(arr2) / sizeof(arr2[0]);
