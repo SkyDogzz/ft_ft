@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 13:47:19 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/02/23 14:06:04 by skydogzz         ###   ########.fr       */
+/*   Updated: 2025/02/24 23:49:44 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ void	test_atoi(const char *num, int (*libc)(const char *),
 	rlibc = libc(num);
 	rlibft = libft(num);
 	if (rlibc != rlibft)
-		printf(RED "%s should give %d but gave %d\n" CRESET, num, rlibc, rlibft);
+		printf(RED "%s should give %d but gave %d\n" CRESET, num, rlibc,
+			rlibft);
 	else
-		printf(GRN "%s should give %d and gave %d\n" CRESET, num, rlibc, rlibft);
+		printf(GRN "%s should give %d and gave %d\n" CRESET, num, rlibc,
+			rlibft);
 }
 
 int	main(void)
