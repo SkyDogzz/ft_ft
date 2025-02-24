@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 02:32:43 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/02/22 20:27:01 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/02/24 23:11:12 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,8 +136,8 @@ typedef struct s_dlist
 }					t_dlist;
 
 t_dlist		*ft_dlstnew(void *content);
-void		ft_dlstadd_front(t_dlist **dlst, t_dlist *ne);
-void		ft_dlstadd_back(t_dlist **dlst, t_dlist *ne);
+t_dlist		*ft_dlstadd_front(t_dlist **dlst, t_dlist *ne);
+t_dlist		*ft_dlstadd_back(t_dlist **dlst, t_dlist *ne);
 int			ft_dlstsize(t_dlist *dlst);
 int			ft_dlstsize_full(t_dlist *dlst);
 t_dlist		*ft_dlstfirst(t_dlist *dlst);

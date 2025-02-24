@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 20:27:37 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/23 13:37:46 by skydogzz         ###   ########.fr       */
+/*   Updated: 2025/02/24 23:20:33 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 t_list	*ft_lstadd_back(t_list **lst, t_list *ne)
 {
-	t_list	*memb;
+	t_list	*head;
 
 	if (!lst)
 		return (NULL);
-	memb = *lst;
-	if (!memb)
+	if (*lst == NULL)
 	{
 		*lst = ne;
-		return (memb);
+		return (*lst);
 	}
-	ft_lstlast(memb)->next = ne;
-	return (memb);
+	head = *lst;
+	ft_lstlast(head)->next = ne;
+	return (head);
 }
