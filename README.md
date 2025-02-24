@@ -3,6 +3,9 @@
 ## Description
 Libft is a custom C library that provides a comprehensive collection of utility functions commonly used in system programming and algorithmic tasks. It offers functions for memory manipulation, string operations, character checking, conversion routines, handling of both singly and doubly linked lists, binary tree operations, hash map management, and other mathematical utilities.
 
+## Academic Integrity Notice
+**Important:** Students of 42 who have not developed and submitted their own version of Libft are strongly discouraged from cloning or using these files. Unauthorized use of this repository may be considered cheating by 42 and could lead to serious academic consequences. Please ensure you complete your own work before referencing this code.
+
 ## Installation
 To compile and generate the static library `libft.a`, run:
 ```sh
