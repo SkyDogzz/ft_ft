@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 02:32:43 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/02/24 23:11:12 by skydogzz         ###   ########.fr       */
+/*   Updated: 2025/02/25 14:45:03 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,8 @@
 # include <limits.h>
 # include <stddef.h>
 # include <stdint.h>
+# include <stdbool.h>
 # include "color.h"
-
-typedef enum e_bool
-{
-	FALSE,
-	TRUE
-}	t_bool;
-
 // memory related fonctions
 
 void		*ft_memset(void *b, int c, size_t len);
@@ -54,8 +48,8 @@ char		*ft_strndup(const char *s, int n);
 char		*ft_strreplace(const char *full, const char *old, const char *ne);
 
 void		ft_freetab(char **tab);
-t_bool		ft_isin_charset(const char c, const char *set);
-t_bool		ft_isin_stringset(const char *s, const char *set, const char delim);
+bool		ft_isin_charset(const char c, const char *set);
+bool		ft_isin_stringset(const char *s, const char *set, const char delim);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s, char const *set);
