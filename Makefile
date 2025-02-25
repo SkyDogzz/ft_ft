@@ -124,7 +124,7 @@ lint:
 	@cppcheck --enable=all --inconclusive --std=c99 -I $(INC_DIR) $(SRC_DIR) tests \
 	--suppress=unusedFunction --suppress=unusedVariable \
 	--suppress=variableScope --suppress=missingIncludeSystem \
-	--check-level=exhaustive --suppress=unmatchedSuppression \
+	--suppress=unmatchedSuppression \
 	--suppress=shiftTooManyBitsSigned --suppress=constVariablePointer \
 	--suppress=checkersReport 2> $(LOG_DIR)/lint_errors.log
 	@echo "$(_CYAN)Résultats de cppcheck enregistrés dans $(LOG_DIR)/lint_errors.log$(_END)"

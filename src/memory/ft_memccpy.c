@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:23:03 by tstephan          #+#    #+#             */
-/*   Updated: 2025/02/23 13:48:47 by skydogzz         ###   ########.fr       */
+/*   Updated: 2025/02/25 01:10:35 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		pos++;
 	}
 	if (p_src[pos] == c)
-		return (dst + pos);
+		return ((void *)((long)dst + pos));
 	return (dst);
 }
