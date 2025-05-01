@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 02:32:43 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/02/25 14:45:03 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/01 14:39:33 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stddef.h>
 # include <stdint.h>
 # include <stdbool.h>
+# include <fcntl.h>
 # include "color.h"
 // memory related fonctions
 
@@ -186,5 +187,14 @@ t_hashmap	*ft_hashmap_new(void);
 /*hashmap_get      # get an existing item*/
 /*hashmap_delete   # delete and return an item*/
 /*hashmap_clear    # clear the hash map*/
+
+char		*ft_strjoin_free(char *s1, char *s2);
+char		**ft_split_set(char *s, char *set);
+
+void		ft_random(void *uint, int size);
+uint8_t		ft_random_8(void);
+uint16_t	ft_random_16(void);
+uint32_t	ft_random_32(void);
+uint64_t	ft_random_64(void);
 
 #endif
