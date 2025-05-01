@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 02:32:43 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/05/01 14:39:33 by skydogzz         ###   ########.fr       */
+/*   Updated: 2025/05/01 15:54:49 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,5 +196,11 @@ uint8_t		ft_random_8(void);
 uint16_t	ft_random_16(void);
 uint32_t	ft_random_32(void);
 uint64_t	ft_random_64(void);
+
+bool		ft_bf_get(const void *field, uint8_t pos, size_t bit_count);
+void		ft_bf_set(void *field, uint8_t pos, size_t bit_count);
+void		ft_bf_clear(void *field, uint8_t pos, size_t bit_count);
+void		ft_bf_toggle(void *field, uint8_t pos, size_t bit_count);
+uint8_t		ft_bf_count(const void *field, size_t bit_count);
 
 #endif

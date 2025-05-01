@@ -61,6 +61,9 @@ SRC_BTREE = ft_btree_clear.c ft_btree_height.c ft_btree_inorder.c \
 SRC_HASHMAP_DIR = hashmap
 SRC_HASHMAP = ft_hashmap_new.c
 
+SRC_BITFIELDS_DIR = bitfields
+SRC_BITFIELDS = bitfields.c
+
 SRC_LIBFT = $(addprefix $(SRC_STR_DIR)/, $(SRC_STR)) \
 			$(addprefix $(SRC_MEMORY_DIR)/, $(SRC_MEMORY)) \
 			$(addprefix $(SRC_CONVERT_DIR)/, $(SRC_CONVERT)) \
@@ -70,7 +73,8 @@ SRC_LIBFT = $(addprefix $(SRC_STR_DIR)/, $(SRC_STR)) \
 			$(addprefix $(SRC_LST_DIR)/, $(SRC_LST)) \
 			$(addprefix $(SRC_HASHMAP_DIR)/, $(SRC_HASHMAP)) \
 			$(addprefix $(SRC_BTREE_DIR)/, $(SRC_BTREE)) \
-			$(addprefix $(SRC_DLST_DIR)/, $(SRC_DLST))
+			$(addprefix $(SRC_DLST_DIR)/, $(SRC_DLST)) \
+			$(addprefix $(SRC_BITFIELDS_DIR)/, $(SRC_BITFIELDS))
 
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(SRC_LIBFT:.c=.o))
 DEP_FILES = $(OBJ_FILES:.o=.d)
