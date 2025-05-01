@@ -44,13 +44,14 @@ SRC_MEMORY = ft_bzero.c ft_calloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c \
 
 SRC_STR_DIR = str
 SRC_STR = ft_freetab.c ft_isin_charset.c ft_isin_stringset.c ft_split.c \
-		  ft_strreplace.c ft_strchr.c ft_strcmp.c ft_strdup.c ft_strjoin.c \
-		  ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c \
-		  ft_strndup.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c
+		  ft_split_set.c ft_strchr.c ft_strcmp.c ft_strdup.c ft_strjoin.c \
+		  ft_strjoin_free.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c \
+		  ft_strncmp.c ft_strndup.c ft_strnstr.c ft_strrchr.c ft_strreplace.c \
+		  ft_strtrim.c ft_substr.c
 
 SRC_UTILS_DIR = utils
 SRC_UTILS = ft_abs.c ft_factorial.c ft_max.c ft_min.c ft_power.c ft_sqrt.c \
-			ft_swap.c
+			ft_swap.c ft_random.c
 
 SRC_BTREE_DIR = btree
 SRC_BTREE = ft_btree_clear.c ft_btree_height.c ft_btree_inorder.c \
