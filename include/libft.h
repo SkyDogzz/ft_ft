@@ -6,7 +6,7 @@
 /*   By: skydogzz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 02:32:43 by skydogzz          #+#    #+#             */
-/*   Updated: 2025/05/01 15:54:49 by skydogzz         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:33:38 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strdup(const char *s);
 char		*ft_strndup(const char *s, int n);
+char		*ft_strdup_until(const char *str, char c);
 // still have a weird bug with ft_strreplace
 char		*ft_strreplace(const char *full, const char *old, const char *ne);
 
@@ -90,6 +91,8 @@ char		*ft_itoa(int n);
 // long long   ft_atoll_base(const char *str, const char *base);
 // char		*ft_lltoa(long n);
 // char    	*ft_lltoa_base(long long n, const char *base);
+bool		strict_atoll(const char *s, long long *result);
+bool		strict_atoi(const char *s, int *result);
 
 // list related
 

@@ -24,7 +24,7 @@ SRC_CHAR = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_islower.c \
 		   ft_isprint.c ft_isspace.c ft_isupper.c ft_tolower.c ft_toupper.c
 
 SRC_CONVERT_DIR = convert
-SRC_CONVERT = ft_atoi.c ft_itoa.c
+SRC_CONVERT = ft_atoi.c ft_itoa.c ft_strict_atoll.c ft_strict_atoi.c
 
 SRC_DLST_DIR = dlst
 SRC_DLST = ft_dlstadd_back.c ft_dlstadd_front.c ft_dlstclear.c ft_dlstdelone.c \
@@ -47,7 +47,7 @@ SRC_STR = ft_freetab.c ft_isin_charset.c ft_isin_stringset.c ft_split.c \
 		  ft_split_set.c ft_strchr.c ft_strcmp.c ft_strdup.c ft_strjoin.c \
 		  ft_strjoin_free.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c \
 		  ft_strncmp.c ft_strndup.c ft_strnstr.c ft_strrchr.c ft_strreplace.c \
-		  ft_strtrim.c ft_substr.c
+		  ft_strtrim.c ft_substr.c ft_strdup_until.c
 
 SRC_UTILS_DIR = utils
 SRC_UTILS = ft_abs.c ft_factorial.c ft_max.c ft_min.c ft_power.c ft_sqrt.c \
@@ -64,6 +64,9 @@ SRC_HASHMAP = ft_hashmap_new.c
 SRC_BITFIELDS_DIR = bitfields
 SRC_BITFIELDS = bitfields.c
 
+SRC_ARGP_DIR = argp
+SRC_ARGP = parse.c count.c free.c
+
 SRC_LIBFT = $(addprefix $(SRC_STR_DIR)/, $(SRC_STR)) \
 			$(addprefix $(SRC_MEMORY_DIR)/, $(SRC_MEMORY)) \
 			$(addprefix $(SRC_CONVERT_DIR)/, $(SRC_CONVERT)) \
@@ -74,7 +77,8 @@ SRC_LIBFT = $(addprefix $(SRC_STR_DIR)/, $(SRC_STR)) \
 			$(addprefix $(SRC_HASHMAP_DIR)/, $(SRC_HASHMAP)) \
 			$(addprefix $(SRC_BTREE_DIR)/, $(SRC_BTREE)) \
 			$(addprefix $(SRC_DLST_DIR)/, $(SRC_DLST)) \
-			$(addprefix $(SRC_BITFIELDS_DIR)/, $(SRC_BITFIELDS))
+			$(addprefix $(SRC_BITFIELDS_DIR)/, $(SRC_BITFIELDS)) \
+			$(addprefix $(SRC_ARGP_DIR)/, $(SRC_ARGP))
 
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(SRC_LIBFT:.c=.o))
 DEP_FILES = $(OBJ_FILES:.o=.d)
